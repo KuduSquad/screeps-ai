@@ -4,13 +4,13 @@
  * @author IraqLobst3r
  * @module harvester
  */
-function Harvester() {
+var Harvester = {
 
     /**
      * run function for harvester
      * @name run 
      */
-    this.run = function(creep) {
+    run: function(creep) {
         if(creep.store.getFreeCapacity() > 0) {
             let sources = creep.room.find(FIND_SOURCES);
             if(creep.harvest(sources[0]) == ERR_NOT_IN_RANGE) {
@@ -32,7 +32,7 @@ function Harvester() {
                 }
             }
             else {
-                creep.moveTo(21,12, {visualizePathStyle: {stroke: '#ffffff'}});
+                creep.moveTo(9,29, {visualizePathStyle: {stroke: '#ffffff'}});
             }
         }
     }

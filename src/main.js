@@ -7,13 +7,13 @@
  */
 
 // List of modules needed for main loop
-var Harvester = require('CreepsManager/harvester');
-var Upgrader = require('CreepManager/upgrader');
-var Builder = require('CreepManager/builder');
-var Repairer = require('CreepManager/repairer');
-var Carrier = require('CreepManager/carrier');
+var Harvester = require('harvester');
+var Upgrader = require('upgrader');
+var Builder = require('builder');
+var Repairer = require('repairer');
+var Carrier = require('carrier');
 
-var RoomManager = require('RoomManager/room_manager');
+var RoomManager = require('room_manager');
 
 module.exports.loop = function () {
     
@@ -21,10 +21,17 @@ module.exports.loop = function () {
      * Delete memory from dead creeps
      */
     for(let name in Memory.creeps) {
-        Game.constructionSites;
         if(!Game.creeps[name]) {
             delete Memory.creeps[name];
             console.log('Clearing non-existing creep memory:', name);
+        }
+    }
+
+    for(let name in Memory.rooms) {
+        let flag = Game.rooms[name];
+        if(!flag) {
+            delete Memory.rooms[name];
+            console.log('Clearing room memory:', name);
         }
     }
     

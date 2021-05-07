@@ -1,5 +1,5 @@
-function Builder(){
-    this.run = function(creep){
+var Builder = {
+    run: function(creep){
 
         if(creep.memory.building && creep.store[RESOURCE_ENERGY] == 0) {
             creep.memory.building = false;

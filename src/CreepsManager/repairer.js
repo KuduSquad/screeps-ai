@@ -1,5 +1,5 @@
-function Repairer(){
-    this.run = function(creep){
+var Repairer = {
+    run: function(creep){
 
         // suche naechsten container, wenn er resourcen enthaelt sonst naechste resourcen quelle 
         if(creep.memory.repairing && creep.store[RESOURCE_ENERGY] == 0){
