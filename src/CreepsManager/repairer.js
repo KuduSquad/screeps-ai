@@ -1,8 +1,6 @@
-var roleRepairer = {
+function Repairer(){
+    this.run = function(creep){
 
-    /** @param {Creep} creep **/
-    run: function(creep) {
-        
         // suche naechsten container, wenn er resourcen enthaelt sonst naechste resourcen quelle 
         if(creep.memory.repairing && creep.store[RESOURCE_ENERGY] == 0){
             creep.memory.repairing = false;
@@ -110,6 +108,6 @@ var roleRepairer = {
             }
         }
     }
-};
+    }
 
-module.exports = roleRepairer;
+module.exports = Repairer;

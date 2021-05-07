@@ -1,16 +1,16 @@
-/*
- * Module code goes here. Use 'module.exports' to export things:
- * module.exports.thing = 'a thing';
+/**
+ * @file harvester module file
  *
- * You can import it from another modules like this:
- * var mod = require('role.harvester');
- * mod.thing == 'a thing'; // true
+ * @author IraqLobst3r
+ * @module harvester
  */
+function Harvester() {
 
-var roleHarvester = {
-
-    /** @param {Creep} creep **/
-    run: function(creep) {
+    /**
+     * run function for harvester
+     * @name run 
+     */
+    this.run = function(creep) {
         if(creep.store.getFreeCapacity() > 0) {
             let sources = creep.room.find(FIND_SOURCES);
             if(creep.harvest(sources[0]) == ERR_NOT_IN_RANGE) {
@@ -36,6 +36,6 @@ var roleHarvester = {
             }
         }
     }
-};
+}
 
-module.exports = roleHarvester;
+module.exports = Harvester;
